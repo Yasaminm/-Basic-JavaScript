@@ -1,0 +1,3 @@
+let catName = "Oliver";
+let catSound = "Meow!";
+//variable declared by let can not be reassigned, and the variable declared with var can be overwrited...
