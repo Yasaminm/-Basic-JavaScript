@@ -1,0 +1,12 @@
+const sum = 10 + 10; // addition operator
+const difference = 45 - 33; // subtraction operator
+const product = 8 * 10; // multiply operator
+const quotient = 66 / 33; // devid operator
+
+// Increment a number
+let myVar = 87;
+myVar++;
+
+// Decrement a number
+let myVar = 11;
+myVar--;
