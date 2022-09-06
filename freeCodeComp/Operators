@@ -4,9 +4,53 @@ const product = 8 * 10; // multiply operator
 const quotient = 66 / 33; // devid operator
 
 // Increment a number
-let myVar = 87;
+let myVarIn = 87;
 myVar++;
 
 // Decrement a number
-let myVar = 11;
+let myVarDec = 11;
 myVar--;
+
+//Decimal numbers
+const ourDecimal = 5.7;
+var myDecimal = 5.7;
+
+//Devide & multiply decimal numbers;
+const quotients = 4.4 / 2.0; 
+const products = 2.0 * 2.2;
+
+//The remainder operator % gives the remainder of the division of two numbers.
+/*5 % 2 = 1 //because
+Math.floor(5 / 2) = 2 //(Quotient)
+2 * 2 = 4
+5 - 4 = 1; //(Remainder)
+
+In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by 2.
+
+17 % 2 = 1 (17 is Odd)
+48 % 2 = 0 (48 is Even)
+*/
+
+//Compound Assignment With Augmented Addition
+let a = 3;
+let b = 17;
+let c = 12;
+
+a = a + 12; // => a+=12;
+b = 9 + b;  // => b+=9;
+c = c + 7;  // => c+=7;
+
+// Compound Assignment With Augmented Subtraction
+let d = 11;
+
+d = d - 6; // d-=6;
+
+//Compound Assignment With Augmented Multiplication
+let e = 5;
+
+e = e * 5; // e*=5
+
+//Compound Assignment With Augmented Division
+let f = 48;
+
+f = f/4 // f/= 4;
