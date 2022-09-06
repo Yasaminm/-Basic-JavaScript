@@ -44,3 +44,22 @@ lastNameLength = lastName.length; // 8
 let firstLetterOfLastName = "";
 const lastName2 = "Lovelace";
 firstLetterOfLastName = lastName2[0]; //L
+
+//Use Bracket Notation to Find the Nth Character in a String
+const lastName3 = "Lovelace";
+const thirdLetterOfLastName = lastName3[2]; //v
+
+//Use Bracket Notation to Find the Last Character in a String
+const lastName4 = "Lovelace";
+const lastLetterOfLastName = lastName4[lastName4.length-1]; //e
+
+//Use Bracket Notation to Find the Nth-to-Last Character in a String
+const lastName5 = "Lovelace";
+const secondToLastLetterOfLastName = lastName5[lastName5.length-2]; // c
+
+//Word Blanks
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
+const wordBlanks = "My " + myAdjective + " " + myNoun + " " + myVerb + " " + myAdvrb + ".";
