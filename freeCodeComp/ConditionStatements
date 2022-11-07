@@ -38,6 +38,66 @@ function testStrict(val) {
     typeof 3
     typeof '3'
 
+  /*
+  The strict inequality operator (!==) is the logical opposite of the strict equality operator.
+  It means "Strictly Not Equal" and returns false where strict equality would return true and vice versa.
+  The strict inequality operator will not convert data types.
+  */
+ /*
+ The greater than operator (>) compares the values of two numbers.
+ If the number to the left is greater than the number to the right, it returns true.
+ Otherwise, it returns false.
+Like the equality operator, the greater than operator will convert data types of 
+values while comparing.
+ */
+function testGreaterThan(val) {
+    if (val> 100) {  
+      return "Over 100";
+    }
+  
+    if (val> 10) {
+      return "Over 10";
+    }
+  
+    return "10 or Under";
+  }
+  
+  testGreaterThan(10);
 
 
+    /*
+Sometimes you will need to test more than one thing at a time. 
+The logical and operator (&&) returns true if and only if the 
+operands to the left and right of it are true.
+The same effect could be achieved by nesting an if statement inside another if:
+    */
 
+if (num > 5) {
+    if (num < 10) {
+      return "Yes";
+    }
+  }
+  return "No";
+
+  // above function is equal to below function
+
+  if (num > 5 && num < 10) {
+    return "Yes";
+  }
+  return "No";
+
+
+  /*
+  The logical or operator (||) returns true if either of the operands is true.
+  Otherwise, it returns false.
+  */
+
+  function testLogicalOr(val) {
+  
+    if (val< 10 || val > 20) {
+      return "Outside";
+    }
+    return "Inside";
+  }
+  
+  testLogicalOr(15);

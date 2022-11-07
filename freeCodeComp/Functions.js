@@ -63,4 +63,10 @@ function timesFive(num){
 
   addSum(3);
 
-  
+  //we can take the return value of a function and assign it to a variable.
+  let processed = 0;
+
+  function processArg(num) {
+    return (num + 3) / 5;
+  }
+  processed = processArg(7);
