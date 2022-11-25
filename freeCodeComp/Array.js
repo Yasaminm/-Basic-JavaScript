@@ -9,8 +9,8 @@ const myArray3 = [50, 60, 70];
 const myData1 = myArray3[0];
 
 //Unlike strings, the entries of arrays are mutable and can be changed freely, even if the array was declared with const.
-const myArray4 = [18, 64, 99];
-myArray4[0] = 45 // [45, 64, 99]
+const myArray4a = [18, 64, 99];
+myArray4a[0] = 45 // [45, 64, 99]
 
 //Access Multi-Dimensional Arrays With Indexes
 const myArray4 = [
@@ -38,3 +38,29 @@ const removedFromMyArray2 = myArray7.shift();
 const myArray8 = [["John", 23], ["dog", 3]];
 myArray8.shift(); // [["dog", 3]]
 myArray8.unshift(["Paul", 35]);// [["Paul", 35], ["dog", 3]]
+
+//Accessing Nested Arrays
+/**
+ * Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.
+ */
+ const ourPets = [
+  {
+    animalType: "cat",
+    names: [
+      "Meowzer",
+      "Fluffy",
+      "Kit-Cat"
+    ]
+  },
+  {
+    animalType: "dog",
+    names: [
+      "Spot",
+      "Bowser",
+      "Frankie"
+    ]
+  }
+];
+
+ourPets[0].names[1];
+ourPets[1].names[0];

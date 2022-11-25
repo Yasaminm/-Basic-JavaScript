@@ -69,3 +69,95 @@ function phoneticLookup(val) {
   }
   
   phoneticLookup("charlie");
+
+  //Testing Objects for Properties
+  //We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name.
+  function checkObj(obj, checkProp) {
+
+    return obj.hasOwnProperty(checkProp) ? obj[checkProp] : "Not Found";
+  
+  }
+///////
+function checkObj(obj, checkProp) {
+  let result;
+if(obj.hasOwnProperty(checkProp)){
+  result = obj.checkProp;
+} else{
+  result = "Not Found";
+}
+return result;
+}
+////////
+function checkObj(obj, checkProp) {
+  if(obj.hasOwnProperty(checkProp)){
+    return obj.checkProp;
+  } else{
+    return"Not Found";
+  }
+}
+  //////
+
+  //Manipulating Complex Objects
+/**
+ * Sometimes you may want to store data in a flexible Data Structure.
+ * A JavaScript object is one way to handle flexible data. They allow for arbitrary
+ * combinations of strings, numbers, booleans, arrays, functions, and objects.
+ */
+
+//Accessing Nested Objects
+/**
+ * The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+ */
+ const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+//////////////////
+
+//Record Collection
+// Setup
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  If(prop != "tracks" && value != ""){
+    records.id.prop = value;
+  } else if(prop == "tracks" && records.id.hasOwnProperty("tracks") ){
+    const tracks = [];
+    tracks.add(value);
+  } else if(props == "tracks" && value != ""){
+    records.id.tracks.add(value);
+  } else if(value == ""){
+    delete records.id.props;
+  }
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
