@@ -147,7 +147,7 @@ const recordCollection = {
 
 // Only change code below this line
 function updateRecords(records, id, prop, value) {
-  If(prop != "tracks" && value != ""){
+  if(prop != "tracks" && value != ""){
     records.id.prop = value;
   } else if(prop == "tracks" && records.id.hasOwnProperty("tracks") ){
     const tracks = [];
@@ -161,3 +161,168 @@ function updateRecords(records, id, prop, value) {
 }
 
 updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+// Setup
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if(records.prop != "tracks" && records.prop[value]){
+    records.id.prop = value;
+  } else if(prop == "tracks" && records.id.hasOwnProperty("tracks") ){
+    const tracks = [];
+    tracks.add(value);
+  } else if(props == "tracks" && value != ""){
+    records.id.tracks.add(value);
+  } else if(value == ""){
+    delete records.id.props;
+  }
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+function updateRecords(records, id, prop, value) {
+  if(prop != "tracks" && value != ""){
+    records.id.prop.value = value;
+  } else if(prop == "tracks" && records.id.hasOwnProperty("tracks") ){
+    const tracks = [];
+    records.id.tracks.add(value);
+  } else if(prop == "tracks" && value != ""){
+    records.id.tracks.add(value);
+  } else if(value == ""){
+    delete records.id.prop;
+  }
+  return records;
+}
+
+//this one woked:
+function updateRecords(records, id, prop, value) {
+  if(prop !== "tracks" && value !== ""){
+    //records.id.prop = value;
+    records[id][prop] = value;
+  } else if(prop === "tracks" && records[id].hasOwnProperty("tracks") === false ){
+    //records[id][prop] = value;
+    records[id][prop] = [value];
+  } else if(prop === "tracks" && value !== ""){
+    //records.id.prop.push(value);
+    records[id][prop].push(value);
+  } else if(value === ""){
+    //delete records.id.prop;
+    delete records[id][prop];
+  }
+  return records;
+}
+records[id][prop] = value;
+records[id][prop] = [value];
+
+/////////////////////////////
+type Test = {
+  [key: number]: {
+      tracks: string[]
+  },
+  yasi: string;
+}
+
+const test: Test = {
+  123: {
+      tracks: ['tr1', 'tr2']
+  },
+  32746: {
+      tracks: ['tr1', 'tr2']
+  },
+  yasi: 'this works'
+}
+
+// test.id = 'test2';
+console.log(test);
+
+
+const recordCollection = {
+2548: {
+  albumTitle: 'Slippery When Wet',
+  artist: 'Bon Jovi',
+  tracks: ['Let It Rock', 'You Give Love a Bad Name']
+},
+2468: {
+  albumTitle: '1999',
+  artist: 'Prince',
+  tracks: ['1999', 'Little Red Corvette']
+},
+1245: {
+  artist: 'Robert Palmer',
+  tracks: []
+},
+5439: {
+  albumTitle: 'ABBA Gold',
+}
+};
+
+updateRecords(recordCollection, -1, 'artist', 'ABBA');
+const trick: string = 'shit';
+if (trick === 'artist' || trick === 'tracks' || trick === 'albumTitle') {
+  updateRecords(recordCollection, 5439, trick, 'ABBA');
+} else {
+  updateRecords(recordCollection, 5439, trick, 'ABBA');
+  console.log("Prop needs to be either: tracks, ..")
+}
+
+type PropType = 'tracks' | 'artist' |'albumTitle';
+
+function updateRecords(records: any, id: number, prop: PropType, value: any) {
+  if (records.keys().includes(id)) {
+      return;
+  }
+  if (!['tracks', 'artist', 'albumTitle'].includes(prop)) {
+      console.log("Prop needs to be either: tracks, ..")
+      return;
+  }
+  records[id][prop]
+  if (prop === 'tracks') {
+      records[id].tracks = value;
+  } else if (prop === 'artist') {
+      records[id].artist = value;
+  } else if (prop === 'albumTitle') {
+      records[id].albumTitle = value;
+  } else {
+      console.log("Prop needs to be either: tracks, ..")
+  }
+  
+if(prop !== "tracks" && value !== ""){
+  records[id][prop] = value;
+} else if(prop === "tracks" && records[id].hasOwnProperty("tracks") === false ){
+  records[id].tracks = [value]; // 'ABBA'
+} else if(prop === "tracks" && value !== ""){
+  //records.id.prop.push(value);
+  records[id][prop].push(value);
+} else if(value === ""){
+  //delete records.id.prop;
+  delete records[id][prop];
+}
+}
+
+
+
+//records[id][prop] = value;
+//records[id][prop] = [value];
+//delete records.id.prop;
+//delete records[id][prop];
+

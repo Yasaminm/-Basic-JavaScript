@@ -51,3 +51,27 @@ list<Apartment__c> apartmentsToBeUpdated = new list<Apartment__c>();
             update apartmentsToBeUpdated;
         }
     }
+
+    //////////////////////
+    //Apartment Numbering according to their floor
+    list<Apartment__c> apartmentsToBeUpdated = new list<Apartment__c>();
+
+    Id propertyId = 'a011i00000TKPAHAA5';
+
+    list<Apartment__c> apartmentsByProperty = new list<Apartment__c>();
+
+     if (propertyId != null) {    
+        apartmentsByProperty = [SELECT Apartment_Number__c FROM Apartment__c WHERE PropertyRef__c=:propertyId ORDER BY FloorPick__c ASC]; 
+        
+        if(apartmentsByProperty.size() > 0) {
+            Integer i = 0;
+            for(Apartment__c apt: apartmentsByProperty){
+                    i = i + 1;
+                    apt.Apartment_Number__c = i;
+                    apartmentsToBeUpdated.add(apt);
+
+            }
+    
+            update apartmentsToBeUpdated;
+        }
+    }
