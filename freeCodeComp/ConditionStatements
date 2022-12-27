@@ -232,3 +232,51 @@ function golfScore(par, strokes) {
     if (count > 0) return count + " Bet";
     return count + " Hold";
   }
+
+  //Conditional (Ternary) Operator
+  //The conditional operator, also called the ternary operator, can be used as a one line if-else expression.
+  //The syntax is a ? b : c
+  
+  /**
+   * Use the conditional operator in the checkEqual function to check if two numbers are equal or not.
+   * The function should return either the string Equal or the string Not Equal.
+   */
+   function checkEqual(a, b) {
+    return a === b? "Equal" : "Not Equal";
+  }
+  
+  checkEqual(1, 2);
+
+  //You can also chain them together to check for multiple conditions.
+  function findGreaterOrEqual(a, b) {
+    if (a === b) {
+      return "a and b are equal";
+    }
+    else if (a > b) {
+      return "a is greater";
+    }
+    else {
+      return "b is greater";
+    }
+  }
+
+  // is equal to:
+  function findGreaterOrEqual(a, b) {
+    return (a === b) ? "a and b are equal" 
+      : (a > b) ? "a is greater" 
+      : "b is greater";
+  }
+
+/**
+ * It is considered best practice to format multiple conditional operators
+ * such that each condition is on a separate line, as shown above. Using multiple conditional
+ * operators without proper indentation may make your code hard to read
+ */
+
+ function checkSign(num) {
+  return (num>0)? "positive"
+        :(num<0)? "negative"
+        : "zero";
+}
+
+checkSign(10);
